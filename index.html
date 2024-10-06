@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فلسطين وغزة</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&display=swap'); /* إضافة الخط */
+
+        body {
+            font-family: 'Aref Ruqaa', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #1d1f20;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            color: #f8d210;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 28px;
+            color: #e0e0e0;
+        }
+        button, .back-btn {
+            padding: 8px 35px;
+            font-size: 22px;
+            background-color: #f72c25;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            font-family: 'Aref Ruqaa', serif; /* تعديل الخط على الأزرار */
+        }
+        button:hover, .back-btn:hover {
+            background-color: #d11f1a;
+        }
+        .highlight {
+            color: #ff6363;
+            font-size: 32px;
+            margin: 20px 0;
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        .btn-group button {
+            padding: 8px 25px;
+            font-size: 22px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            transition: background-color 0.3s ease;
+            font-family: 'Aref Ruqaa', serif; /* تعديل الخط على الأزرار */
+        }
+        .btn-group button:hover {
+            background-color: #218838;
+        }
+        .btn-group .share-btn {
+            background-color: #ffc107;
+        }
+        .btn-group .share-btn:hover {
+            background-color: #e0a800;
+        }
+        .btn-group .watch-btn {
+            background-color: #0372e1;
+        }
+        .btn-group .watch-btn:hover {
+            background-color: #2f6cb7;
+        }
+        #page2 p, #page1 p {
+            font-size: 32px;
+        }
+        .back-btn {
+            margin-top: 30px;
+            display: block;
+            font-size: 18px;
+            color: #fff;
+            background-color: #555;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .company-list {
+            text-align: left;
+            color: #e0e0e0;
+            margin-top: 20px;
+        }
+        .company-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .company-list li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="container">
+        <br>
+        <br>
+        <br>
+        <h1>! مرحبًا بكِ </h1>
+        <p> .اضغطي على الزر التالي لتكتشفي موقع غزة على الخريطة</p>
+        <button onclick="goToPage2()">التالي</button>
+    </div>
+
+    <div id="page2" class="container" style="display: none;">
+        <br>
+        <br>
+        <br>
+        <h1>عذراً</h1>
+        <p> ! ! لم يتم العثور على غزة، لقد مُحيت من الخريطة</p>
+        <button onclick="goToPage3()">التالي</button>
+    </div>
+
+    <div id="page3" class="container" style="display: none;">
+        <h1>... لا تقلقي ، غزة موجودة</h1>
+        <p> بالرغم من كل ما يحدث، تبقى غزة حية في قلوبنا. لكن متى سنتحرك من أجلها؟ هل ننتظر حتى تزال معالمها من الذاكرة؟</p>
+        <p>اليوم، تكمل غزة عامًا كاملًا على آخر حربٍ ألمّت بها، لكن هذا العام ليس سوى إضافة إلى 75 عامًا من الاحتلال والمعاناة. عامٌ مضى، مليء بالألم والدمار، يكشف لنا عن وحشية الواقع الذي تعيشه</p>
+        <p>! هل ننتظر حتى تختفي غزة من ذاكرة العالم لنجعل أصواتنا مسموعة ؟</p>
+        <p class="highlight">! أنتِ قادرة على إحداث فرق</p>
+
+        <div class="btn-group">
+            <button onclick="window.open('https://albadeel.org/', '_blank')">قاطعي</button>
+            <button class="share-btn" onclick="shareSite()">شاركي</button>
+            <button class="watch-btn" onclick="goToYouTube()">شاهدي</button>
+        </div>
+    </div>
+
+    <div id="page4" class="container" style="display: none;">
+        <h1>المقاطعة</h1>
+        <p>الشركات التي تدعم الاحتلال وتساهم في استمرار المعاناة:</p>
+        <div class="company-list">
+            <ul>
+                <li>شركة A: تمول مشاريع استيطانية.</li>
+                <li>شركة B: تقدم خدمات تكنولوجية للحكومة.</li>
+                <li>شركة C: تستفيد من الموارد الفلسطينية المحتلة.</li>
+            </ul>
+        </div>
+        <a href="javascript:void(0)" class="back-btn" onclick="goBackToPage3()">رجوع</a>
+    </div>
+
+    <div id="page5" class="container" style="display: none;">
+        <h1>شارك</h1>
+        <p>قم بمشاركة هذا الرابط مع أصدقائك لدعم القضية الفلسطينية.</p>
+        <a href="javascript:void(0)" class="back-btn" onclick="goBackToPage3()">رجوع</a>
+    </div>
+
+    <div id="page6" class="container" style="display: none;">
+        <h1>شاهد</h1>
+        <p>يتم تحويلك إلى يوتيوب للبحث عن غزة.</p>
+        <a href="https://www.youtube.com/results?search_query=%D8%BA%D8%B2%D8%A9" target="_blank" class="back-btn">اذهب إلى يوتيوب</a>
+        <a href="javascript:void(0)" class="back-btn" onclick="goBackToPage3()">رجوع</a>
+    </div>
+
+    <script>
+        function goToPage2() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        }
+
+        function goToPage3() {
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'block';
+        }
+
+        function goToPage4() {
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page4').style.display = 'block';
+        }
+
+        function goToPage5() {
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page5').style.display = 'block';
+        }
+
+        function goToPage6() {
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page6').style.display = 'block';
+        }
+
+        function goBackToPage3() {
+            document.getElementById('page4').style.display = 'none';
+            document.getElementById('page5').style.display = 'none';
+            document.getElementById('page6').style.display = 'none';
+            document.getElementById('page3').style.display = 'block';
+        }
+
+        function shareSite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'ادعم القضية الفلسطينية',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('تمت المشاركة بنجاح.');
+                }).catch((error) => {
+                    console.error('فشل المشاركة:', error);
+                });
+            } else {
+                alert('المشاركة غير مدعومة في هذا المتصفح. قم بنسخ الرابط يدويًا: ' + window.location.href);
+            }
+        }
+
+        function goToYouTube() {
+            window.location.href = 'https://www.youtube.com/results?search_query=%D8%BA%D8%B2%D8%A9';
+        }
+    </script>
+</body>
+</html>
